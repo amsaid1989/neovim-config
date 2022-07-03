@@ -1,1 +1,1 @@
-GuiFont! JetBrains Mono:h10.5
+GuiFont! Fira Code:h11

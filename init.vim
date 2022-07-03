@@ -19,6 +19,9 @@ if !exists('g:vscode')
 
 		" SENSIBLE VIM
 		Plug 'tpope/vim-sensible'
+
+		" JavaScript Syntax Highlightin
+		Plug 'pangloss/vim-javascript'
 		
 		" THEMES
 		Plug 'dracula/vim'
@@ -50,7 +53,7 @@ if !exists('g:vscode')
 		Plug 'https://github.com/bfrg/vim-cpp-modern'
 
 		" PYTHON AUTO FORMAT WITH BLACK
-		Plug 'psf/black', { 'branch': 'stable' }	
+		Plug 'psf/black'
 		
 		" VIM STATUSLINE
 		Plug 'vim-airline/vim-airline'
