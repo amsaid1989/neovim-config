@@ -51,10 +51,16 @@ return packer.startup(function(use)
   use "jiangmiao/auto-pairs" -- Insert or delete brackets, parens, quotes in pair
   use 'andymass/vim-matchup' -- Highlight, navigate, and operate on sets of matching text. It extends vim's % key to language-specific words instead of just single characters
   use 'tpope/vim-commentary' -- Install Vim commentary
+  use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } } -- Kick off builds and test suites using one of several asynchronous adapters
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }) -- Preview markdown on your modern browser with synchronised scrolling and flexible configuration
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- Install Lualina
+  use 'akinsho/bufferline.nvim'
+  use 'akinsho/toggleterm.nvim'
 
   -- Themes
-  use 'bluz71/vim-moonfly-colors' -- Install the moonfly theme
   use 'navarasu/onedark.nvim' -- Install the OneDark themes
+  use "EdenEast/nightfox.nvim"
 
   -- Install nvim-cmp related plugins
   use 'hrsh7th/cmp-nvim-lsp'
@@ -63,7 +69,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lua'
-  -- Snippets engine
+  -- Snippets
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
@@ -72,25 +78,23 @@ return packer.startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig' -- enable LSP
   use 'williamboman/nvim-lsp-installer' -- language server installer
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   -- END LSP
 
-  use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}} -- Kick off builds and test suites using one of several asynchronous adapters
-  use({"iamcco/markdown-preview.nvim", run = "cd app && yarn install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }) -- Preview markdown on your modern browser with synchronised scrolling and flexible configuration
-  use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }} -- Install Lualina
-
   -- Telescope
-  use {'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} }}
-  use {'nvim-telescope/telescope-media-files.nvim'} -- Media files extension
+  use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
+  use { 'nvim-telescope/telescope-media-files.nvim' } -- Media files extension
 
   -- Treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
-  use {'p00f/nvim-ts-rainbow'} -- Rainbow parentheses using Treesitter
+  use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
+  use { 'p00f/nvim-ts-rainbow' } -- Rainbow parentheses using Treesitter
+  use { 'JoosepAlviste/nvim-ts-context-commentstring' } -- Commenting plugin for files that have different languages (e.g. ts/tsx)
 
   -- Gitsigns
   use 'lewis6991/gitsigns.nvim'
 
   -- Nvim-Tree
-  use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons',}}
+  use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons', } }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
