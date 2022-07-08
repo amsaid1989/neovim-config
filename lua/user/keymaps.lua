@@ -50,6 +50,9 @@ keymap("n", "<C-p>", ":MarkdownPreview<CR>", opts)
 keymap("n", "<leader>f", "<cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<CR>", opts)
 
+-- Run Make
+keymap("n", "<C-b>", ":Make<CR>", opts)
+
 -- Insert --
 
 -- Visual --
