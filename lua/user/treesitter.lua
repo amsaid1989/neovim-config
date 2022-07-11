@@ -42,6 +42,12 @@ configs.setup {
     -- termcolors = {} -- table of colour name strings
   },
   context_commentstring = {
-    enable = true
+    enable = true,
+    config = {
+      c = { __default = '// %s', __multiline = '// %s' },
+      cpp = { __default = '// %s', __multiline = '// %s' },
+      typescript = { __default = '// %s', __multiline = '// %s' },
+      javascript = { __default = '// %s', __multiline = '// %s' }
+    }
   }
 }
