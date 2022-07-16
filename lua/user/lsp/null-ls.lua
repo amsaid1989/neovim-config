@@ -14,7 +14,7 @@ null_ls.setup {
   debug = false,
   sources = {
     formatting.prettier,
-    formatting.black.with { extra_args = { "--fast" } },
+    formatting.blue.with { extra_args = { "--fast" } },
     diagnostics.flake8,
   },
   -- you can reuse a shared lspconfig on_attach callback here
