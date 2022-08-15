@@ -9,8 +9,8 @@ end
 
 keymap("n", "<F5>", ":lua require('dap').continue()<CR>", opts)
 keymap("n", "<F8>", ":lua terminate_session()<CR>", opts)
-keymap("n", "<F10>", ":lua require('dap').step_over()<CR>", opts)
-keymap("n", "<F11>", ":lua require('dap').step_into()<CR>", opts)
+keymap("n", "<F9>", ":lua require('dap').step_over()<CR>", opts)
+keymap("n", "<F10>", ":lua require('dap').step_into()<CR>", opts)
 keymap("n", "<F12>", ":lua require('dap').step_out()<CR>", opts)
 keymap("n", "<leader>b", ":lua require('dap').toggle_breakpoint()<CR>", opts)
 keymap("n", "<leader>B", ":lua require('dap').toggle_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
