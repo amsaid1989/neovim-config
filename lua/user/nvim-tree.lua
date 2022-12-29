@@ -55,7 +55,7 @@ nvim_tree.setup {
 				{ key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
 				{ key = "h", cb = tree_cb "close_node" },
 				{ key = "v", cb = tree_cb "vsplit" },
-				{ key = "<C-T>", action = "tabnew" }, -- Use Ctrl-Shift-t for tabnew
+				{ key = "<C-w>", action = "tabnew" }, -- Use Ctrl-w for tabnew
 				{ key = "<C-t>", action = "" } -- Remove the Ctrl-t mapping
 			},
 		},
