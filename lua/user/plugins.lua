@@ -52,10 +52,12 @@ return packer.startup(function(use)
 	use 'andymass/vim-matchup' -- Highlight, navigate, and operate on sets of matching text. It extends vim's % key to language-specific words instead of just single characters
 	use 'tpope/vim-commentary'
 	use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } } -- Kick off builds and test suites using one of several asynchronous adapters
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install",
-		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }) -- Preview markdown on your modern browser with synchronised scrolling and flexible configuration
+	use({
+			"iamcco/markdown-preview.nvim",
+			run = function() vim.fn["mkdp#util#install"]() end,
+	})
 	use { 'kyazdani42/nvim-web-devicons' }
-	use { 'nvim-lualine/lualine.nvim', opt = true }
+	use { 'nvim-lualine/lualine.nvim' }
 	use 'akinsho/bufferline.nvim'
 	use 'akinsho/toggleterm.nvim'
 
