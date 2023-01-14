@@ -54,7 +54,8 @@ return packer.startup(function(use)
 	use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } } -- Kick off builds and test suites using one of several asynchronous adapters
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install",
 		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }) -- Preview markdown on your modern browser with synchronised scrolling and flexible configuration
-	use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+	use { 'kyazdani42/nvim-web-devicons' }
+	use { 'nvim-lualine/lualine.nvim', opt = true }
 	use 'akinsho/bufferline.nvim'
 	use 'akinsho/toggleterm.nvim'
 
@@ -98,7 +99,7 @@ return packer.startup(function(use)
 	use 'lewis6991/gitsigns.nvim'
 
 	-- Nvim-Tree
-	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons', } }
+	use { 'kyazdani42/nvim-tree.lua' }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
