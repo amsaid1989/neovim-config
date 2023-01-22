@@ -82,12 +82,12 @@ local function lsp_keymaps(bufnr)
     ,
     opts
   ) -- Open diagnostics float for the current line
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>", opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting_sync()' ]]
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ bufnr = bufnr })<CR>", opts)
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ bufnr = bufnr })' ]]
 end
 
 -- Configure format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ bufnr = bufnr })]]
 
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
