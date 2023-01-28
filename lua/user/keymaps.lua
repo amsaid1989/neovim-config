@@ -48,9 +48,11 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("n", "<C-p>", ":MarkdownPreview<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>f", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<leader>g", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
+keymap("n", "<leader>gf", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>gb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", opts)
+keymap("n", "<leader>gl", "<cmd>Telescope diagnostics<CR>", opts)
 
 -- Run Make
 keymap("n", "<C-b>", ":Make<CR>", opts)
