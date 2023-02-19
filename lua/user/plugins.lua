@@ -76,8 +76,11 @@ return packer.startup(function(use)
 	-- END NVIM-CMP
 
 	-- LSP
-	use 'neovim/nvim-lspconfig' -- enable LSP
-	use 'williamboman/nvim-lsp-installer' -- language server installer
+	use {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
+	}
 	use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 	-- END LSP
 
