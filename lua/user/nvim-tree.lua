@@ -51,10 +51,10 @@ nvim_tree.setup {
 			custom_only = false,
 			list = {
 				{ key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-				{ key = "h", cb = tree_cb "close_node" },
-				{ key = "v", cb = tree_cb "vsplit" },
-				{ key = "<C-w>", action = "tabnew" }, -- Use Ctrl-w for tabnew
-				{ key = "<C-t>", action = "" } -- Remove the Ctrl-t mapping
+				{ key = "h",                  cb = tree_cb "close_node" },
+				{ key = "v",                  cb = tree_cb "vsplit" },
+				{ key = "<C-w>",              action = "tabnew" }, -- Use Ctrl-w for tabnew
+				{ key = "<C-t>",              action = "" } -- Remove the Ctrl-t mapping
 			},
 		},
 		number = false,
@@ -103,9 +103,19 @@ nvim_tree.setup {
 	},
 }
 
-local function open_nvim_tree()
-  -- open the tree
-  require("nvim-tree.api").tree.open()
+local function open_nvim_tree(data)
+	-- buffer is a directory
+	local directory = vim.fn.isdirectory(data.file) == 1
+
+	if not directory then
+		return
+	end
+
+	-- change to the directory
+	vim.cmd.cd(data.file)
+
+	-- open the tree
+	require("nvim-tree.api").tree.open()
 end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
