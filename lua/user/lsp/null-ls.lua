@@ -16,7 +16,7 @@ null_ls.setup {
 		formatting.prettier.with({
 			disabled_filetypes = { "json" },
 		}),
-		formatting.blue.with { extra_args = { "--fast" } },
+		formatting.black.with { extra_args = { "--fast" } },
 		diagnostics.flake8,
 	},
 	-- you can reuse a shared lspconfig on_attach callback here
