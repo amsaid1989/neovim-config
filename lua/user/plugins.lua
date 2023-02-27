@@ -52,8 +52,9 @@ return packer.startup(function(use)
 	use 'andymass/vim-matchup' -- Highlight, navigate, and operate on sets of matching text. It extends vim's % key to language-specific words instead of just single characters
 	use 'tpope/vim-commentary'
 	use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } } -- Kick off builds and test suites using one of several asynchronous adapters
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-	use { 'kyazdani42/nvim-web-devicons' }
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+	use { 'nvim-tree/nvim-web-devicons' }
 	use { 'nvim-lualine/lualine.nvim' }
 	use 'akinsho/bufferline.nvim'
 	use 'akinsho/toggleterm.nvim'
@@ -77,9 +78,9 @@ return packer.startup(function(use)
 
 	-- LSP
 	use {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"neovim/nvim-lspconfig",
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
 	}
 	use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 	-- END LSP
@@ -101,7 +102,7 @@ return packer.startup(function(use)
 	use 'lewis6991/gitsigns.nvim'
 
 	-- Nvim-Tree
-	use { 'kyazdani42/nvim-tree.lua' }
+	use { 'nvim-tree/nvim-tree.lua' }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
