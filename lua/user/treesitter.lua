@@ -23,13 +23,14 @@ configs.setup {
 		"markdown_inline",
 		"tsx",
 		"rust",
-		"vim"
+		"vim",
+		"zig"
 	},
 	sync_install = false,
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
-		enable = true, -- false will disable the whole extension
-		disable = { "" }, -- list of language that will be disabled
+		enable = true,        -- false will disable the whole extension
+		disable = { "" },     -- list of language that will be disabled
 		additional_vim_regex_highlighting = false,
 	},
 	indent = { enable = true, disable = { "yaml", "python" } },
@@ -46,6 +47,7 @@ configs.setup {
 		config = {
 			c = { __default = '// %s', __multiline = '// %s' },
 			cpp = { __default = '// %s', __multiline = '// %s' },
+			zig = { __default = '// %s', __multiline = '// %s' },
 			typescript = { __default = '// %s', __multiline = '// %s' },
 			javascript = { __default = '// %s', __multiline = '// %s' }
 		}
