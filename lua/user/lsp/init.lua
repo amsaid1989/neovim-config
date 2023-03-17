@@ -6,7 +6,8 @@ end
 mason_lsp.setup {
 	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "lua_ls" }
 	-- This setting has no relation with the `automatic_installation` setting.
-	ensure_installed = { "clangd", "bashls", "neocmake", "lua_ls", "pyright", "rust_analyzer", "zls", "tsserver", "json-lsp" },
+	ensure_installed = { "clangd", "bashls", "neocmake", "lua_ls", "pyright", "rust_analyzer", "zls", "tsserver",
+		"jsonls" },
 
 	-- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
 	-- This setting has no relation with the `ensure_installed` setting.
@@ -15,7 +16,7 @@ mason_lsp.setup {
 	--   - true: All servers set up via lspconfig are automatically installed.
 	--   - { exclude: string[] }: All servers set up via lspconfig, except the ones provided in the list, are automatically installed.
 	--       Example: automatic_installation = { exclude = { "rust_analyzer", "solargraph" } }
-	automatic_installation = false,
+	automatic_installation = true,
 }
 
 local lsp_status_ok, lspconfig = pcall(require, "lspconfig")
@@ -27,6 +28,12 @@ local opts = {
 	on_attach = require("user.lsp.handlers").on_attach,
 	capabilities = require("user.lsp.handlers").capabilities,
 }
+
+-- Odin's language server doesn't seem to be recognised by Mason, so it has to
+-- be setup directly by lspconfig
+local ols_opts = require("user.lsp.settings.ols")
+ols_opts = vim.tbl_deep_extend("force", ols_opts, opts)
+lspconfig["ols"].setup(ols_opts)
 
 mason_lsp.setup_handlers {
 	function(server_name) -- default handler (optional)
