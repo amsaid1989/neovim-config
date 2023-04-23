@@ -74,7 +74,7 @@ nvim_tree.setup {
 	hijack_netrw = true,
 	open_on_tab = false,
 	hijack_cursor = false,
-	update_cwd = true,
+	sync_root_with_cwd = true,
 	diagnostics = {
 		enable = true,
 		icons = {
@@ -125,7 +125,7 @@ nvim_tree.setup {
 				folder_arrow = true,
 			},
 			glyphs = {
-				default = "",
+				default = "",
 				symlink = "",
 				git = {
 					unstaged = "",
