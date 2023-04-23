@@ -72,11 +72,6 @@ nvim_tree.setup {
 	on_attach = on_attach,
 	disable_netrw = true,
 	hijack_netrw = true,
-	ignore_ft_on_setup = {
-		"startify",
-		"dashboard",
-		"alpha",
-	},
 	open_on_tab = false,
 	hijack_cursor = false,
 	update_cwd = true,
