@@ -55,7 +55,7 @@ keymap("n", "<leader>gb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", opts)
 keymap("n", "<leader>gl", "<cmd>Telescope diagnostics<CR>", opts)
 
 -- Run Make
-keymap("n", "<C-b>", ":Make<CR>", opts)
+keymap("n", "<C-m>", ":Make<CR>", opts)
 
 -- Insert --
 
