@@ -43,17 +43,22 @@ packer.init {
 return packer.startup(function(use)
 	-- Essentials
 	use "wbthomason/packer.nvim" -- Have packer manage itself
-	use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+	use "nvim-lua/popup.nvim"   -- An implementation of the Popup API from vim in Neovim
 	use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
 
 	-- General
-	use "tpope/vim-endwise" -- A simple plugin that helps to end certain structures automatically
-	use "jiangmiao/auto-pairs" -- Insert or delete brackets, parens, quotes in pair
-	use 'andymass/vim-matchup' -- Highlight, navigate, and operate on sets of matching text. It extends vim's % key to language-specific words instead of just single characters
+	use "tpope/vim-endwise"                                                                 -- A simple plugin that helps to end certain structures automatically
+	use "jiangmiao/auto-pairs"                                                              -- Insert or delete brackets, parens, quotes in pair
+	use 'andymass/vim-matchup'                                                              -- Highlight, navigate, and operate on sets of matching text. It extends vim's % key to language-specific words instead of just single characters
 	use 'tpope/vim-commentary'
 	use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } } -- Kick off builds and test suites using one of several asynchronous adapters
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+	use 'tpope/vim-fugitive'
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+		ft = { "markdown" },
+	})
 	use { 'nvim-tree/nvim-web-devicons' }
 	use { 'nvim-lualine/lualine.nvim' }
 	use 'akinsho/bufferline.nvim'
@@ -95,7 +100,7 @@ return packer.startup(function(use)
 
 	-- Treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
-	use { 'p00f/nvim-ts-rainbow' } -- Rainbow parentheses using Treesitter
+	use { 'p00f/nvim-ts-rainbow' }                       -- Rainbow parentheses using Treesitter
 	use { 'JoosepAlviste/nvim-ts-context-commentstring' } -- Commenting plugin for files that have different languages (e.g. ts/tsx)
 
 	-- Gitsigns

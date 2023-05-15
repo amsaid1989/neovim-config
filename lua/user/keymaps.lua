@@ -57,6 +57,9 @@ keymap("n", "<leader>gl", "<cmd>Telescope diagnostics<CR>", opts)
 -- Run Make
 keymap("n", "<C-m>", ":Make<CR>", opts)
 
+-- Vim Fugitive
+keymap("n", "<leader>gt", ":G<CR>", opts)
+
 -- Insert --
 
 -- Visual --
