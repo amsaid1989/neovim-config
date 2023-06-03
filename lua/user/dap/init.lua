@@ -2,13 +2,13 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
-function terminate_session()
+function TerminateSession()
 	require('dap').terminate(nil, nil)
 	require('dapui').close()
 end
 
 keymap("n", "<F5>", ":lua require('dap').continue()<CR>", opts)
-keymap("n", "<F6>", ":lua terminate_session()<CR>", opts)
+keymap("n", "<F6>", ":lua TerminateSession()<CR>", opts)
 keymap("n", "<F7>", ":lua require('dap').step_over()<CR>", opts)
 keymap("n", "<F8>", ":lua require('dap').step_into()<CR>", opts)
 keymap("n", "<F9>", ":lua require('dap').step_out()<CR>", opts)
