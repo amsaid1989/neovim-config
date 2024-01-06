@@ -29,12 +29,6 @@ local opts = {
 	capabilities = require("user.lsp.handlers").capabilities,
 }
 
--- Odin's language server doesn't seem to be recognised by Mason, so it has to
--- be setup directly by lspconfig
-local ols_opts = require("user.lsp.settings.ols")
-ols_opts = vim.tbl_deep_extend("force", ols_opts, opts)
-lspconfig["ols"].setup(ols_opts)
-
 mason_lsp.setup_handlers {
 	function(server_name) -- default handler (optional)
 		lspconfig[server_name].setup(opts)
@@ -56,6 +50,12 @@ mason_lsp.setup_handlers {
 		opts = vim.tbl_deep_extend("force", lua_ls_opts, opts)
 
 		lspconfig["lua_ls"].setup(opts)
+	end,
+	["ols"] = function()
+		local ols_opts = require("user.lsp.settings.ols")
+		opts = vim.tbl_deep_extend("force", ols_opts, opts)
+
+		lspconfig.ols.setup(opts)
 	end
 }
 
