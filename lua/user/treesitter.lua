@@ -21,6 +21,7 @@ configs.setup {
 		"cmake",
 		"markdown",
 		"markdown_inline",
+		"odin",
 		"tsx",
 		"rust",
 		"vim",
