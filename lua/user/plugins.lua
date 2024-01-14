@@ -68,6 +68,7 @@ return packer.startup(function(use)
 	-- Themes
 	use 'navarasu/onedark.nvim'
 	use 'EdenEast/nightfox.nvim'
+	use { 'uloco/bluloco.nvim', requires = { 'rktjmp/lush.nvim' } }
 
 	-- Install nvim-cmp related plugins
 	use 'hrsh7th/cmp-nvim-lsp'
