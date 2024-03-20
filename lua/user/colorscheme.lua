@@ -1,5 +1,5 @@
 require('bluloco').setup({
-	guicursor = false,
+	guicursor = true,
 })
 
 local colorscheme = 'bluloco'
