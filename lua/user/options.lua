@@ -39,6 +39,8 @@ vim.opt.colorcolumn = "80"
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 vim.opt.background = 'dark'
 vim.opt.makeprg = "test -f build && ./build || make"
+vim.opt.list = true
+vim.opt.listchars = "space:.,tab:->"
 
 vim.opt.shortmess:append "c"
 
