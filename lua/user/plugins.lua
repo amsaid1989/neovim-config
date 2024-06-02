@@ -70,19 +70,6 @@ return packer.startup(function(use)
 	use 'EdenEast/nightfox.nvim'
 	use { 'uloco/bluloco.nvim', requires = { 'rktjmp/lush.nvim' } }
 
-	-- Install nvim-cmp related plugins
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-nvim-lua'
-	-- Snippets
-	use 'L3MON4D3/LuaSnip'
-	use 'saadparwaiz1/cmp_luasnip'
-	use 'rafamadriz/friendly-snippets'
-	-- END NVIM-CMP
-
 	-- LSP
 	use {
 		"williamboman/mason.nvim",
@@ -91,6 +78,19 @@ return packer.startup(function(use)
 	}
 	use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 	-- END LSP
+
+	-- Install nvim-cmp related plugins
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-nvim-lua'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
+	-- Snippets
+	use 'L3MON4D3/LuaSnip'
+	use 'saadparwaiz1/cmp_luasnip'
+	use 'rafamadriz/friendly-snippets'
+	-- END NVIM-CMP
 
 	-- DAP (Debugging)
 	use 'mfussenegger/nvim-dap'
