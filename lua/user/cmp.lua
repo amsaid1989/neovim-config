@@ -45,6 +45,8 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+local select_opts = { behavior = cmp.SelectBehavior.Select, count = 1 }
+
 cmp.setup {
 	snippet = {
 		expand = function(args)
@@ -52,8 +54,8 @@ cmp.setup {
 		end,
 	},
 	mapping = {
-		["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-k>"] = cmp.mapping.select_prev_item(select_opts),
+		["<C-j>"] = cmp.mapping.select_next_item(select_opts),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -67,7 +69,7 @@ cmp.setup {
 		["<CR>"] = cmp.mapping.confirm { select = true },
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.select_next_item()
+				cmp.select_next_item(select_opts)
 			elseif luasnip.expandable() then
 				luasnip.expand()
 			elseif luasnip.expand_or_jumpable() then
@@ -83,7 +85,7 @@ cmp.setup {
 		}),
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
-				cmp.select_prev_item()
+				cmp.select_prev_item(select_opts)
 			elseif luasnip.jumpable(-1) then
 				luasnip.jump(-1)
 			else
@@ -120,5 +122,8 @@ cmp.setup {
 	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered()
+	},
+	experimental = {
+		ghost_text = true,
 	},
 }
