@@ -118,6 +118,14 @@ cmp.setup {
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{
+			name = 'nvim_lsp',
+			option = {
+				markdown_oxide = {
+					keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
+				}
+			}
+		},
 	},
 	window = {
 		completion = cmp.config.window.bordered(),

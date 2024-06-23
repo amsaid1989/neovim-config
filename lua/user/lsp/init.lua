@@ -7,7 +7,7 @@ mason_lsp.setup {
 	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "lua_ls" }
 	-- This setting has no relation with the `automatic_installation` setting.
 	ensure_installed = { "clangd", "bashls", "neocmake", "lua_ls", "pyright", "rust_analyzer", "zls", "tsserver",
-		"jsonls" },
+		"jsonls", "ols", "glsl_analyzer" },
 
 	-- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
 	-- This setting has no relation with the `ensure_installed` setting.
