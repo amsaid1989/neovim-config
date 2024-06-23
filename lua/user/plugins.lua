@@ -76,7 +76,6 @@ return packer.startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	}
-	use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 	-- END LSP
 
 	-- Install nvim-cmp related plugins

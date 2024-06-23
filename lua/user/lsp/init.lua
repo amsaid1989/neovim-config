@@ -56,8 +56,13 @@ mason_lsp.setup_handlers {
 		opts = vim.tbl_deep_extend("force", ols_opts, opts)
 
 		lspconfig.ols.setup(opts)
+	end,
+	["markdown_oxide"] = function()
+		local md_ox_opts = require("user.lsp.settings.markdown-oxide")
+		opts = vim.tbl_deep_extend("force", md_ox_opts, opts.capabilities)
+
+		lspconfig.markdown_oxide.setup(opts)
 	end
 }
 
 require("user.lsp.handlers").setup()
-require "user.lsp.null-ls"
