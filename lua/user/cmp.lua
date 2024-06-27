@@ -113,11 +113,6 @@ cmp.setup {
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" },
 		{
 			name = 'nvim_lsp',
 			option = {
@@ -126,6 +121,10 @@ cmp.setup {
 				}
 			}
 		},
+		{ name = "nvim_lua" },
+		{ name = "luasnip" },
+		{ name = "buffer" },
+		{ name = "path" },
 	},
 	window = {
 		completion = cmp.config.window.bordered(),
