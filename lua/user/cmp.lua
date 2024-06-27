@@ -71,7 +71,7 @@ cmp.setup {
 			if cmp.visible() then
 				cmp.select_next_item(select_opts)
 			elseif luasnip.expandable() then
-				luasnip.expand()
+				luasnip.expand(select_opts)
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
 			elseif check_backspace() then
@@ -121,7 +121,6 @@ cmp.setup {
 				}
 			}
 		},
-		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
