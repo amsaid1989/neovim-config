@@ -86,7 +86,7 @@ return packer.startup(function(use)
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
 	-- Snippets
-	use 'L3MON4D3/LuaSnip'
+	use { 'L3MON4D3/LuaSnip', run = 'make install_jsregexp' }
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
 	-- END NVIM-CMP
