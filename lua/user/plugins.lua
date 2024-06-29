@@ -78,18 +78,9 @@ return packer.startup(function(use)
 	}
 	-- END LSP
 
-	-- Install nvim-cmp related plugins
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-nvim-lua'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/nvim-cmp'
-	-- Snippets
-	use { 'L3MON4D3/LuaSnip', run = 'make install_jsregexp' }
-	use 'saadparwaiz1/cmp_luasnip'
-	use 'rafamadriz/friendly-snippets'
-	-- END NVIM-CMP
+	use { "ms-jpq/coq_nvim", branch = "coq" }
+	use { "ms-jpq/coq.artifacts", branch = "artifacts" }
+	use { 'ms-jpq/coq.thirdparty', branch = "3p" }
 
 	-- DAP (Debugging)
 	use 'mfussenegger/nvim-dap'

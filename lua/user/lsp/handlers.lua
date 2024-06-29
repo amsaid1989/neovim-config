@@ -47,7 +47,7 @@ end
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
 	if client.server_capabilities.document_highlight then
-		vim.api.nvim_exec(
+		vim.api.nvim_exec2(
 			[[
       augroup lsp_document_highlight
         autocmd! * <buffer>
@@ -55,7 +55,7 @@ local function lsp_highlight_document(client)
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
     ]],
-			false
+			{}
 		)
 	end
 end
@@ -98,11 +98,11 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+local status_ok, coq = pcall(require, "coq")
 if not status_ok then
 	return
 end
 
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+M.capabilities = vim.tbl_deep_extend("force", capabilities, coq.lsp_ensure_capabilities())
 
 return M
