@@ -40,6 +40,8 @@ return {
 				TypeParameter = "",
 			}
 
+			local select_opts = { behavior = cmp.SelectBehavior.Select, count = 1 }
+
 			cmp.setup({
 				snippet = {
 					expand = function(args)
@@ -51,8 +53,8 @@ return {
 					documentation = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<C-k>"] = cmp.mapping.select_prev_item(),
-					["<C-j>"] = cmp.mapping.select_next_item(),
+					["<C-k>"] = cmp.mapping.select_prev_item(select_opts),
+					["<C-j>"] = cmp.mapping.select_next_item(select_opts),
 					["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 					["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -64,7 +66,7 @@ return {
 					["<CR>"] = cmp.mapping.confirm { select = true },
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
-							cmp.select_next_item()
+							cmp.select_next_item(select_opts)
 						elseif vim.fn["vsnip#expandable()"]() then
 							vim.fn["vsnip-expand"]()
 						elseif vim.fn["vsnip#available(1)"]() then
@@ -80,7 +82,7 @@ return {
 					}),
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
-							cmp.select_prev_item()
+							cmp.select_prev_item(select_opts)
 						elseif vim.fn["vsnip#expandable()"]() then
 							vim.fn["vsnip-expand"]()
 						elseif vim.fn["vsnip#available(1)"]() then
