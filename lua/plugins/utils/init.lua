@@ -4,5 +4,5 @@ return {
 	require("plugins.utils.treesitter"),
 	require("plugins.utils.telescope"),
 	require("plugins.utils.toggleterm"),
-	require("plugins.utils.coq"),
+	require("plugins.utils.cmp"),
 }

@@ -6,12 +6,4 @@ return {
 	{ "jiangmiao/auto-pairs" },
 	{ "andymass/vim-matchup" },
 	{ "tpope/vim-commentary" },
-	{
-		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = "markdown",
-	},
 }
