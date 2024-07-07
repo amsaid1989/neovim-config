@@ -56,12 +56,6 @@ keymap("n", "<leader>gb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", opts)
 keymap("n", "<leader>gl", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>km", "<cmd>Telescope keymaps<CR>", opts)
 
--- Run Make
-keymap("n", "<F10>", ":Make<CR>", opts)
-
--- Vim Fugitive
-keymap("n", "<leader>gt", ":G<CR>", opts)
-
 -- Vim Fugitive
 keymap("n", "<leader>gt", ":G<CR>", opts)
 
