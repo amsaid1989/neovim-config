@@ -2,7 +2,7 @@
 
 -- Odin
 vim.filetype.add({
-	pattern = {
-		['.*%.odin'] = 'odin'
-	}
+  pattern = {
+    ['.*%.odin'] = 'odin'
+  }
 })

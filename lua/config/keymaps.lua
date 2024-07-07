@@ -27,7 +27,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Open NvimTree with <leader>-e
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":Neotree<cr>", opts)
 
 -- Resize the splits with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -54,12 +55,6 @@ keymap("n", "<leader>gf", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>gb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", opts)
 keymap("n", "<leader>gl", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>km", "<cmd>Telescope keymaps<CR>", opts)
-
--- Run Make
-keymap("n", "<F10>", ":Make<CR>", opts)
-
--- Vim Fugitive
-keymap("n", "<leader>gt", ":G<CR>", opts)
 
 -- Vim Fugitive
 keymap("n", "<leader>gt", ":G<CR>", opts)

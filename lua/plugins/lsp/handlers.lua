@@ -5,8 +5,8 @@ M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
+		{ name = "DiagnosticSignHint", text = "󰌵" },
+		{ name = "DiagnosticSignInfo", text = "" },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -92,17 +92,23 @@ M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.server_capabilities.document_formatting = false
 	end
-	lsp_keymaps(bufnr)
-	lsp_highlight_document(client)
+	-- lsp_keymaps(bufnr)
+	-- lsp_highlight_document(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local status_ok, coq = pcall(require, "coq")
+-- local status_ok, coq = pcall(require, "coq")
+-- if not status_ok then
+-- 	return
+-- end
+
+-- M.capabilities = vim.tbl_deep_extend("force", capabilities, coq.lsp_ensure_capabilities())
+local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
 	return
 end
 
-M.capabilities = vim.tbl_deep_extend("force", capabilities, coq.lsp_ensure_capabilities())
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
