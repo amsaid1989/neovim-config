@@ -2,6 +2,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
+		priority = 100,
 		opts = {
 			-- The directory in which to install packages.
 			install_root_dir = vim.fn.stdpath("data") .. "/mason",
@@ -165,3 +166,4 @@ return {
 		end,
 	},
 }
+
