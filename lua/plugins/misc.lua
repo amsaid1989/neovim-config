@@ -5,6 +5,5 @@ return {
 	{ "tpope/vim-endwise" },
 	{ "jiangmiao/auto-pairs" },
 	{ "andymass/vim-matchup" },
-	{ "tpope/vim-commentary" },
 	{ "tpope/vim-fugitive" },
 }
