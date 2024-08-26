@@ -44,5 +44,9 @@ vim.opt.listchars = "space:.,tab:➜ "
 
 vim.opt.shortmess:append "c"
 
+-- Set commentstring
+vim.cmd('filetype plugin on')
+vim.cmd('autocmd FileType c,cpp,javascript,typescript,cs,java setlocal commentstring=//\\ %s')
+
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
