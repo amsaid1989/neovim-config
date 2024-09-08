@@ -3,12 +3,7 @@ return {
 	{ "nvim-lua/plenary.nvim" },
 	{ "Tetralux/odin.vim" },
 	{ "tpope/vim-endwise" },
-	{
-		"jiangmiao/auto-pairs",
-		init = function()
-			vim.cmd('autocmd FileType c,cpp let b:AutoPairs = AutoPairsDefine({"<": ">"})')
-		end
-	},
+	{ "jiangmiao/auto-pairs" },
 	{ "andymass/vim-matchup" },
 	{ "tpope/vim-fugitive" },
 }
