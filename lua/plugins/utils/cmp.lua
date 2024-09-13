@@ -2,6 +2,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
+			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
@@ -67,11 +68,11 @@ return {
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item(select_opts)
-						elseif vim.fn["vsnip#expandable()"]() then
+						elseif vim.fn["vsnip#expandable"]() == 1 then
 							vim.fn["vsnip-expand"]()
-						elseif vim.fn["vsnip#available(1)"]() then
+						elseif vim.fn["vsnip#available"](1) == 1 then
 							vim.fn["vsnip-expand-or-jump"]()
-						elseif vim.fn["vsnip#jumpable(1)"]() then
+						elseif vim.fn["vsnip#jumpable"](1) == 1 then
 							vim.fn["vsnip-jump-next"]()
 						else
 							fallback()
@@ -83,11 +84,11 @@ return {
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item(select_opts)
-						elseif vim.fn["vsnip#expandable()"]() then
+						elseif vim.fn["vsnip#expandable"]() == 1 then
 							vim.fn["vsnip-expand"]()
-						elseif vim.fn["vsnip#available(1)"]() then
+						elseif vim.fn["vsnip#available"](1) == 1 then
 							vim.fn["vsnip-expand-or-jump"]()
-						elseif vim.fn["vsnip#jumpable(-1)"]() then
+						elseif vim.fn["vsnip#jumpable"](-1) == 1 then
 							vim.fn["vsnip-jump-prev"]()
 						else
 							fallback()
