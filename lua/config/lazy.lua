@@ -21,6 +21,7 @@ local keymap = vim.api.nvim_set_keymap
 require("config.keymaps")
 require("config.options")
 require("config.filetypes")
+require("config.commands")
 
 -- Setup lazy.nvim
 require("lazy").setup({
