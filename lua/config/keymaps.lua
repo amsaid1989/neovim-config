@@ -58,9 +58,6 @@ keymap("n", "<leader>km", "<cmd>Telescope keymaps<CR>", opts)
 -- Vim Fugitive
 keymap("n", "<leader>gt", ":G<CR>", opts)
 
--- AlignAt custom command
-keymap("n", "<leader>al", ":AlignAt ", opts)
-
 -- Insert --
 
 -- Visual --
@@ -75,9 +72,6 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 -- When pasting over a selection in Visual mode, don't overwrite
 -- the contents of the register with the contents of the selection
 keymap("v", "p", '"_dP', opts)
-
--- AlignAt custom command
-keymap("v", "<leader>al", ":AlignAt ", opts)
 
 -- Visual Block --
 -- Move text up and down

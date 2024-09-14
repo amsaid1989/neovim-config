@@ -1,3 +1,5 @@
+local keymap = vim.api.nvim_set_keymap
+
 -- AlignAt command to align several lines at specific character
 vim.api.nvim_create_user_command("AlignAt", function(opts)
 	if #opts.fargs ~= 1 then
@@ -14,3 +16,7 @@ vim.api.nvim_create_user_command("AlignAt", function(opts)
 		vim.api.nvim_exec2("%! column -t -s" .. delim .. " -o" .. delim, {})
 	end
 end, { nargs = "*", range = true })
+
+-- AlignAt custom command shortcut
+keymap("n", "<leader>al", ":AlignAt ", {})
+keymap("v", "<leader>al", ":AlignAt ", {})
