@@ -58,6 +58,9 @@ keymap("n", "<leader>km", "<cmd>Telescope keymaps<CR>", opts)
 -- Vim Fugitive
 keymap("n", "<leader>gt", ":G<CR>", opts)
 
+-- Fix tabs
+keymap("n", "<leader>ft", ":%s/\t/  /g<CR>:noh<CR>:wa<CR>", opts)
+
 -- Insert --
 
 -- Visual --
