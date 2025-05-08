@@ -122,8 +122,6 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local mason_lsp = require("mason-lspconfig")
-			local lspconfig = require("lspconfig")
 			local handlers = require("plugins.lsp.handlers")
 
 			local opts = {
@@ -132,6 +130,7 @@ return {
 			}
 
 			vim.lsp.config('*', opts)
+			vim.lsp.config.pyright = opts
 			vim.lsp.config.jsonls = vim.tbl_deep_extend("force", require("plugins.lsp.settings.jsonls"), opts)
 			vim.lsp.config.lua_ls = vim.tbl_deep_extend("force", require("plugins.lsp.settings.lua_ls"), opts)
 			vim.lsp.config.ols = vim.tbl_deep_extend("force", require("plugins.lsp.settings.ols"), opts)
