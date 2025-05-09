@@ -1,5 +1,45 @@
 return {
 	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		config = function()
+			local function contains(tbl, val)
+				for _, v in pairs(tbl) do
+					if v == val then
+						return true
+					end
+				end
+
+				return false
+			end
+
+			local mason_lsp = require("mason-lspconfig")
+			local handlers = require("plugins.lsp.handlers")
+
+			local opts = {
+				on_attach = handlers.on_attach,
+				capabilities = handlers.capabilities,
+			}
+
+			vim.lsp.config('*', opts)
+
+			local servers = mason_lsp.get_installed_servers()
+			local customised_servers = {"jsonls", "lua_ls", "ols", "markdown_oxide"}
+
+			for _, server in pairs(servers) do
+				vim.lsp.enable(server)
+
+				if contains(customised_servers, server) then
+					vim.lsp.config[server] = vim.tbl_deep_extend("force", require("plugins.lsp.settings." .. server), opts)
+				else
+					vim.lsp.config[server] = opts
+				end
+			end
+
+			handlers.setup()
+		end,
+	},
+	{
 		"mason-org/mason.nvim",
 		lazy = false,
 		opts = {
@@ -98,27 +138,6 @@ return {
 				},
 			},
 		},
-	},
-	{
-		"neovim/nvim-lspconfig",
-		lazy = false,
-		config = function()
-			local handlers = require("plugins.lsp.handlers")
-
-			local opts = {
-				on_attach = handlers.on_attach,
-				capabilities = handlers.capabilities,
-			}
-
-			vim.lsp.config('*', opts)
-			vim.lsp.config.pyright = opts
-			vim.lsp.config.jsonls = vim.tbl_deep_extend("force", require("plugins.lsp.settings.jsonls"), opts)
-			vim.lsp.config.lua_ls = vim.tbl_deep_extend("force", require("plugins.lsp.settings.lua_ls"), opts)
-			vim.lsp.config.ols = vim.tbl_deep_extend("force", require("plugins.lsp.settings.ols"), opts)
-			vim.lsp.config.markdown_oxide = vim.tbl_deep_extend("force", require("plugins.lsp.settings.markdown-oxide"), opts)
-
-			handlers.setup()
-		end,
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
