@@ -6,4 +6,5 @@ return {
 	{ "jiangmiao/auto-pairs" },
 	{ "andymass/vim-matchup" },
 	{ "tpope/vim-fugitive" },
+	{ "otavioschwanck/new-file-template.nvim", opts = {} },
 }
