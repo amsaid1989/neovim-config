@@ -120,7 +120,7 @@ return {
       },
       view = {
         adaptive_size = false,
-        width = 60,
+        width = 40,
         side = "left",
         number = false,
         relativenumber = false,
