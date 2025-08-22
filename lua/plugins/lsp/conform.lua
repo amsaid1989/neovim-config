@@ -22,6 +22,12 @@ return {
 					inherit = true,
 					append_args = { "--fast" },
 				},
+				odinfmt = {
+					-- Change where to find the command if it isn't in your path.
+					command = "odinfmt",
+					args = { "-stdin" },
+					stdin = true,
+				},
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -29,6 +35,7 @@ return {
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				yaml = { "prettier" },
+				odin = { "odinfmt" },
 				-- Use the "*" filetype to run formatters on all filetypes.
 				["*"] = { "codespell" },
 				-- Use the "_" filetype to run formatters on filetypes that don't
