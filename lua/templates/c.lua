@@ -29,8 +29,8 @@ end
 ---   - `filename` (string): The filename of the new file, e.g., "init.lua".
 return function(opts)
   local template = {
-    { pattern = ".c", content = source_template },
     { pattern = ".h", content = header_template },
+    { pattern = ".c", content = source_template },
   }
 
   return utils.find_entry(template, opts)
