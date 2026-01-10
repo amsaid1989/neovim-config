@@ -41,6 +41,7 @@ vim.opt.background = 'dark'
 vim.opt.makeprg = "test -f build && ./build || make"
 vim.opt.list = true
 vim.opt.listchars = "space:.,tab:→ "
+vim.opt.winborder = "rounded"
 
 vim.opt.shortmess:append "c"
 
