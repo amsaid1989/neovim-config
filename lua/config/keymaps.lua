@@ -39,6 +39,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>db", ":bd!<CR>", opts) -- Close buffer
+-- Close all but current buffer
+keymap("n", "<leader>da", ":%bd|e#|NvimTreeToggle<CR>:bnext<CR>:sleep 10m<CR>:bnext<CR>:bd!<CR>:bnext<CR>", opts)
 
 -- Move text up and down using Alt-[k/j]
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
