@@ -46,8 +46,8 @@ keymap("n", "<leader>da", ":%bd|e#|NvimTreeToggle<CR>:bnext<CR>:sleep 10m<CR>:bn
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
--- Run MarkdownPreview using Ctrl-Shift-p
-keymap("n", "<C-p>", ":MarkdownPreview<CR>", opts)
+-- Run MarkdownPreview using Ctrl-p
+keymap("n", "<C-p>", ":PeekOpen<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)

@@ -3,4 +3,5 @@ return {
   require("plugins.utils.telescope"),
   require("plugins.utils.toggleterm"),
   require("plugins.utils.cmp"),
+  require("plugins.utils.markdown"),
 }
